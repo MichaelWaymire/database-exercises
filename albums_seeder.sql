@@ -1,7 +1,5 @@
 USE codeup_test_db;
 
---Try to get code working inthe morning
---Error message Column count doesn't match value count at row 8
 INSERT INTO albums (artist_name, album_name, release_date, sales, genre)
 VALUES ('Michael Jackson','Thriller', 1982, 66, 'Pop'),
        ('Eagles', 'Their Greatest hits', 1976, 51, 'Country Rock'),
@@ -10,7 +8,7 @@ VALUES ('Michael Jackson','Thriller', 1982, 66, 'Pop'),
        ('Meat Loaf', 'Bat Out of Hell', 1977, 42, 'Hard Rock'),
        ('Whitney Houston', 'The Bodyguard', 1992, 42, 'R&B'),
        ('Eagles', 'Hotel California', 1976, 40, 'Soft Rock'),
-       ('Bee Gees', 'Saturday Night Fever', 1977, 40),
+       ('Bee Gees', 'Saturday Night Fever', 1977, 40, 'Disco'),
        ('Fleetwood Mac', 'Rumors', 1977, 40, 'Soft Rock'),
        ('Led Zeppelin', 'Led Zeppelin IV', 1971, 37,'Hard Rock'),
        ('Michael Jackson', 'Bad', 1987, 35, 'Pop'),

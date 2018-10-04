@@ -8,7 +8,7 @@ CREATE TABLE albums (
   artist_name VARCHAR (300),
   album_name VARCHAR (300),
   release_date int,
-  sales int (100),
+  sales int,
   genre VARCHAR (200),
   primary key (id)
 )
