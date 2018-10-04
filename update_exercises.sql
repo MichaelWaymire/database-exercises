@@ -10,9 +10,12 @@ Set sales = sales * 10;
 
 select * from albums where < 1980;
 
-update albums
-set release_date = dateadd(year, -2, RowDateTime)
-set release_dat where < 1980 to  1800
+SELECT albums FROM albums
+WHERE release_date < '1980';
+UPDATE albums
+SET release_date = '1800'
+WHERE release_date < '1980';
+SELECT * FROM albums;
 
 select * from albums where artist_name = 'Michael Jackson';
 
