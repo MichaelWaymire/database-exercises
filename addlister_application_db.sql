@@ -1,8 +1,8 @@
-CREATE DATABASE addlister_db;
-
+CREATE DATABASE adlister_db;
 
 
 create table users (
+
     id INT unsigned NOT NULL AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL,
@@ -13,11 +13,18 @@ create table users (
 CREATE TABLE ads (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     title varchar(250) NOT NUll,
-    discription varchar(500),
+    description varchar(500),
     category varchar(100) NOT NUll,
     user_id INT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY(user_id) REFERENCES  users (id)
+);
+
+
+CREATE TABLE categories (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  category VARCHAR(255),
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE ad_category (
@@ -25,12 +32,6 @@ CREATE TABLE ad_category (
   category_id INTEGER UNSIGNED NOT NULL,
   FOREIGN KEY (ad_id) REFERENCES ads (id),
   FOREIGN KEY (category_id) REFERENCES categories (id)
-);
-
-CREATE TABLE categories (
-  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  category VARCHAR(255),
-  PRIMARY KEY (id)
 );
 
 insert into categories (category)
@@ -54,7 +55,7 @@ values ('tumcor', 'tumcor@test.com', 'fakepassword'),
        ('purpleKale', 'kellyaldamon@yoogle.com', 'p!nk@ndRed');
 
 
-insert into ads (title, discription, category, user_id)
+insert into ads (title, description, category, user_id)
 values ('Couch for sell', 'Selling couch for $200 or BO', 'furniture', 6),
        ('Computer Repair', 'Computer repair person, looking for work', 'services', 1),
        ('Bed to good home', 'Giving away slightly-well used bed', 'giveaway', 4),
@@ -72,14 +73,14 @@ where id in (
 );
 
 -- For a given ad, what category, or categories, does it belong to?
-SELECT a.title, a.discription, a.category
+SELECT a.title, a.description, a.category
 FROM ads AS a
   JOIN categories AS c
     ON a.category = c.category
 WHERE a.id = 6 ;
 
 -- For a given category, show all the ads that are in that category.
-select A.title, A.discription, A.category
+select A.title, A.description, A.category
 from ads as A
   join categories as C on A.category = C.category
 where C.id = 1;
